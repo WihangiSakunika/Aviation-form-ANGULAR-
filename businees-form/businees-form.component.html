@@ -1,0 +1,215 @@
+<body>
+  <div class="container">
+    <h5 class="sc">Aviation Registraion</h5>
+    <form [formGroup]="busineesform" (ngSubmit)="onSubmit()">
+      <!-- r1 -->
+      <h6>Business profile</h6>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>User Name</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="text" placeholder="Enter user name" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          </div>
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">username is required</div>
+          </div>
+        </div>
+        <!-- s1 -->
+        <div class="form-group col-md-6">
+          <label>Password</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="password" placeholder="Enter password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          </div>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">password is required</div>
+          </div>
+        </div>
+      </div>
+      <!-- r2 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>E-mail</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="text" placeholder="Enter user name" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          </div>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">email is required</div>
+          </div>
+        </div>
+        <!-- s1 -->
+        <div class="form-group col-md-6">
+          <label>fax</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="fax" placeholder="Enter fax" formControlName="fax" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fax.errors }" />
+          </div>
+            <div *ngIf="submitted && f.fax.errors" class="invalid-feedback">
+            <div *ngIf="f.fax.errors.required">fax is required</div>
+          </div>
+        </div>
+      </div>
+      <!-- r3 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Nationality</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <select class="custom-select" formControlName="Nationality " [ngClass]="{ 'is-invalid': submitted && f.Nationality.errors }">
+              <option selected disabled>Nationality</option>
+              <option>Srilankan</option>
+              <option>Idian</option>
+              <option value="3">Australian</option>
+              <option value="4">Malaysian</option>
+              <option value="5">Dutchman</option>
+              <option value="6">Singaporean</option>
+              <option value="7">Korean</option>
+              <option value="8">Thai person</option>
+              <option value="9">Japanese person</option>
+              <option value="10">Chinese person</option>
+            </select>
+          </div>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">email is required</div>
+          </div>
+        </div>
+        <!-- s1 -->
+        <div class="form-group col-md-6">
+          <label>country</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <select class="custom-select" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+              <option selected disabled>Country</option>
+                        <option>Srilanka</option>
+                        <option>Idia</option>
+                        <option>Australia</option>
+                        <option>Malaysia</option>
+                        <option>Dutch</option>
+                        <option>Singapor</option>
+                        <option>Korea</option>
+                        <option>Thailand</option>
+                        <option>Japan</option>
+                        <option>China</option>
+            </select>
+          </div>
+            <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+            <div *ngIf="f.country.errors.required">country is required</div>
+          </div>
+        </div>
+      </div>
+      <!-- r3 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Nic</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="number" placeholder="Enter nic" formControlName="nic" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nic.errors }" />
+          </div>
+            <div *ngIf="submitted && f.nic.errors" class="invalid-feedback">
+            <div *ngIf="f.nic.errors.required">nic is required</div>
+          </div>
+        </div>
+        <!-- s1 -->
+        <div class="form-group col-md-6">
+          <label>Passport</label>
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="number" placeholder="Enter Passport" formControlName="Passport" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Passport.errors }" />
+          </div>
+            <div *ngIf="submitted && f.Passport.errors" class="invalid-feedback">
+            <div *ngIf="f.Passport.errors.required">Passport is required</div>
+          </div>
+        </div>
+      </div>
+      <!-- r5 -->
+      <h6>Education Details</h6>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label> secondary Education details</label>
+          <div class="row">
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> Local O/L 
+              </label>
+            </div>
+            <!-- d1 -->
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> foreign O/L 
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- q -->
+        <div class="form-group col-md-6">
+          <label>Higher Education details</label>
+          <div class="row">
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> HND
+              </label>
+            </div>
+            <!-- d1 -->
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> BSc 
+              </label>
+            </div>
+            <!-- d2 -->
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> MSc 
+              </label>
+            </div>
+            <!-- d3 -->
+            <div class="col-6">
+              <input type="checkbox">
+              <i class="icon-checkbox"></i>
+                <label> PHD 
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- terms -->
+      <div class="form-group form-check">
+        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+        <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+    </div>
+      <!-- button here -->
+      <div class="form-row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary btn-lg ">Register</button>
+        </div>
+        <div class="col-6">
+          <button type="reset" class="btn btn-secondary btn-lg" (click)="onReset()">cancel</button>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+</body>

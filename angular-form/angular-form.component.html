@@ -1,0 +1,175 @@
+<body> 
+<div class="container">
+  <div class="mb-5">
+    <form [formGroup]="AviationForm" (ngSubmit)="onsubmit()">
+      <h5 class="sc">Aviation Registraion</h5>
+        <!-- row 1 -->
+        <h6>personal details</h6>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>First Name</label>
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <input type="text" class="form-control" formControlName="firstName" placeholder="Enter First Name"
+                    [ngClass]="{'is-invalid': isSubmitted && f.firstName.errors }" >
+                  </div>
+                  <div *ngIf="isSubmitted && f.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="f.firstName.errors.required">Please inform your True details</div>
+               </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <div class="input-group-prepend">
+                <div class="input-group-text">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name"
+                [ngClass]="{'is-invalid':isSubmitted &&f.lastName.errors}">
+                <div *ngIf="isSubmitted &&f.lastName.errors" class="invalid-feedback">
+                  <div *ngIf="f.lastName.errors.required">Please inform your True details</div></div>
+              </div>
+          </div>
+        </div>
+       <!-- row 2 -->
+       <div class="form-row">
+            <div class="form-group col-md-6">
+            <label>Blood group</label>
+            <div class="input-group-prepend" >
+              <div class="input-group-text">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <select class="custom-select" 
+              (change)="changeBlooGroup($event)"
+              formControlName="Bloodgroup">
+                <option selected disabled>Blood Group</option>
+                <option *ngFor="let BloodGroup of BloodGroup" ngValue="BloodGroup"></option>
+              </select>
+              <!-- error here -->
+              <div class="invalid-feedback" *ngIf="isSubmitted && f.Bloodgroup.errors">
+                <div *ngIf="f.Bloodgroup.errors.required">Please inform your BloodGroup</div>
+              </div>
+            </div>
+            </div>
+            <div class="form-group col-md-6">
+          <label>Eye Vision</label>
+          <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <select class="custom-select"
+              (change)="changeEyevison($event)" formControlName="Eyevision">
+                <option selected disabled>Eye Vision</option>
+                <option *ngFor="let Eyevision of Eyevision" [ngValue]="Eyevision"></option>
+                <!-- <option>Non Spectacles</option> -->
+              </select>
+            </div>
+            </div>
+      </div>
+      <!-- row 3 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Date Of Birthday</label>
+          <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa-solid fa-cake-candles"></i>
+              </div>
+              <input type="date" class="form-control" formControlName="DOB" [ngClass]="{'is-invalid':isSubmitted && f.DOB.errors}" placeholder="Enter DOB">
+              <div *ngIf="isSubmitted &&f.DOB.errors" class="invalid-feedback">
+                <div *ngIf="f.DOB.errors.required">Please inform your True details</div></div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Contact No</label>
+          <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <input type="text" class="form-control" formControlName="contactNo" placeholder="Enter Contact No"
+                [ngClass]="{ 'is-invalid': isSubmitted && f.contactNo.errors }"></div>
+                <div *ngIf="isSubmitted && f.contactNo.errors" class="invalid-feedback">
+                    <div *ngIf="f.contactNo.errors.required">Contact No is Required</div>
+            </div>
+        </div>
+      </div>
+      <!-- row 4 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Perment Address</label>
+          <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa-solid fa-house-chimney"></i>
+              </div>
+              <textarea class="form-control" rows="2" formControlName="PermentAddress" placeholder="Enter Address"
+                [ngClass]="{ 'is-invalid': isSubmitted && f.PermentAddress.errors }"></div>
+                <div *ngIf="isSubmitted && f.PermentAddress.errors" class="invalid-feedback">
+                    <div *ngIf="f.PermentAddress.errors.required">Contact No is Required</div></textarea>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Temporty Address</label>
+          <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa-solid fa-house-chimney"></i>
+              </div>
+              <textarea class="form-control" rows="2" formControlName="TemportyAddress" placeholder="Enter Address" [ngClass]="{ 'is-invalid': isSubmitted && f.PermentAddress.errors }"></div>
+                <div *ngIf="isSubmitted && f.PermentAddress.errors" class="invalid-feedback">
+                    <div *ngIf="f.PermentAddress.errors.required">Contact No is Required</div></textarea>
+            </div>
+        </div>
+      </div>
+      <!-- row 5 -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Gender</label>
+            <div class="input-group-prepend ">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input position-static" type="radio">
+                  <label class="form-check-label"> Male</label>
+              </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input position-static" type="radio">
+                    <label class="form-check-label">Female</label>
+            </div>
+             </div>
+            </div>
+            <!--  -->
+            <div class="form-group col-6">
+              <label>Status</label>
+                <div class="input-group-prepend">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Single</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Married</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Divorce</label>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <!-- last -->
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="Checkme"  [ngClass]="{ 'is-invalid': isSubmitted && f.Checkme.errors }">
+            <label class="form-check-label">
+              Check me out
+            </label>
+            <div *ngIf="isSubmitted && f.Checkme.errors" class="invalid-feedback">check me <output></output></div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary"  [disabled]="isLoading">Next
+          <i  class="fas fa-spinner fa-spin" *ngIf="isLoading"></i>
+        </button>
+        <br>
+        <button type="button" class="btn btn-secondary ml-2" (click)="OnReset()">
+          <i *ngIf="isClear" class="fa-solid fa-eraser fa-beat-fade"></i>clear</button>
+      </form>
+      </div>
+</div>
+</body>

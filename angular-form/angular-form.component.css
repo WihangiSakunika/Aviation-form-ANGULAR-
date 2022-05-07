@@ -1,0 +1,25 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 2px 2px 9px rgb(184, 184, 184),
+                -1px -1px 5px rgb(184, 184, 184);
+    
+}
+.sc{
+    text-align: center;
+}
+body{
+    background: linear-gradient(123deg,blue,red,yellow,rgb(1, 255, 1),rgb(255, 4, 222),#0aebf7
+    );
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+.container{
+    border-radius: 5px;
+    border: 1px solid #808080;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
